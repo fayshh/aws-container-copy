@@ -23,7 +23,7 @@ cd $APP_DIR
 # Setup Python virtual environment and install dependencies
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r /workspaces/aws-container-copy/.devcontainer/app_code/flask/requirements.txt
+pip install -r $APP_DIR/app/flask/requirements.txt
 pip install gunicorn
 
 deactivate # Exit the Python virtual environment
