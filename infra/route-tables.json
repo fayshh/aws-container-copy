@@ -1,0 +1,149 @@
+{
+    "RouteTables": [
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-099646c42f38fedab",
+                    "RouteTableId": "rtb-076d0fd4736a237d4",
+                    "SubnetId": "subnet-030123e9cebb3a459",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-076d0fd4736a237d4",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.0.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationPrefixListId": "pl-63a5400a",
+                    "GatewayId": "vpce-0b7c09fc42dba54cd",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "project-rtb-private2-us-east-1b"
+                }
+            ],
+            "VpcId": "vpc-0a8790330e16fef52",
+            "OwnerId": "197105650556"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": true,
+                    "RouteTableAssociationId": "rtbassoc-01b2967fe1ae7eebd",
+                    "RouteTableId": "rtb-0f3bb3c18a9141d55",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-0f3bb3c18a9141d55",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.0.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                }
+            ],
+            "Tags": [],
+            "VpcId": "vpc-0a8790330e16fef52",
+            "OwnerId": "197105650556"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0b3165ace3521df4c",
+                    "RouteTableId": "rtb-0ebae4af20aabf5e1",
+                    "SubnetId": "subnet-018474c856ebff3ce",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                },
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0dccaea4767fb378e",
+                    "RouteTableId": "rtb-0ebae4af20aabf5e1",
+                    "SubnetId": "subnet-0b7836d4fff246c8e",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-0ebae4af20aabf5e1",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.0.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "GatewayId": "igw-089dc989eb9dcb807",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "project-rtb-public"
+                }
+            ],
+            "VpcId": "vpc-0a8790330e16fef52",
+            "OwnerId": "197105650556"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0d7060b30f28d1c50",
+                    "RouteTableId": "rtb-04259fa091fd36145",
+                    "SubnetId": "subnet-05499aa9565d8e573",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-04259fa091fd36145",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.0.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationPrefixListId": "pl-63a5400a",
+                    "GatewayId": "vpce-0b7c09fc42dba54cd",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "project-rtb-private1-us-east-1a"
+                }
+            ],
+            "VpcId": "vpc-0a8790330e16fef52",
+            "OwnerId": "197105650556"
+        }
+    ]
+}

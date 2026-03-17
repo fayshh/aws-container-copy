@@ -9,7 +9,7 @@ app = Flask(__name__)            # Initialize Flask app
 app.config.from_object(Config)   # Load in the configuration from config.py
 
 # Uncomment this line to print the loaded configuration for debugging purposes
-print(f"Loaded configuration: {app.config}")
+# print(f"Loaded configuration: {app.config}")
 
 # Initialize OAuth with the Flask app and register the Cognito OIDC provider
 oauth = OAuth(app)
