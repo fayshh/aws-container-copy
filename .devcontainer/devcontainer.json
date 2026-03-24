@@ -11,13 +11,9 @@
     "containerEnv": {
         "AWS_SHARED_CREDENTIALS_FILE": "${containerWorkspaceFolder}/.aws/credentials",
         "AWS_CONFIG_FILE": "${containerWorkspaceFolder}/.aws/config",
-<<<<<<< HEAD
         "AWS_REGION": "us-east-1",
         "AWS_DEFAULT_REGION": "us-east-1"
-=======
-        "AWS_REGION": "us-east-1"
-        
->>>>>>> 9219e71 (fixed)
+
     },
     "customizations": {
         "vscode": {
