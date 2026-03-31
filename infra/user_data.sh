@@ -29,14 +29,10 @@ pip install gunicorn
 deactivate # Exit the Python virtual environment
 
 # Set the owner of the repo folder to be the user account that will ultimately run the app
-# MUST COME AFTER THE clone and python steps, since those steps will create files that are owned by root, 
-# and we want to change the ownership of those files to be owned by the ec2-user account instead.
 chown -R ec2-user:ec2-user $APP_DIR
 
 
 # --- Create systemd service ---
-# This creates a systemd service that will run our Flask app using Gunicorn.
-# The service will run as the ec2-user, and it will start automatically on boot.
 cat <<EOF > /etc/systemd/system/xpix.service
 [Unit]
 Description=Gunicorn service for XPix app
@@ -57,4 +53,3 @@ EOF
 # --- Start + enable service ---
 systemctl daemon-reload
 systemctl enable xpix
-systemctl start xpix

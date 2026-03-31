@@ -1,0 +1,481 @@
+[4mLIST-USERS[24m()                                                      [4mLIST-USERS[24m()
+
+[1mNAME[0m
+       list-users -
+
+[1mDESCRIPTION[0m
+       Lists  the  IAM  users  that have the specified path prefix. If no path
+       prefix is specified, the operation returns all users in the Amazon  Web
+       Services  account.  If  there  are none, the operation returns an empty
+       list.
+
+       [1mNOTE:[0m
+          IAM resource-listing operations return a subset of the available at-
+          tributes for the resource. This operation does not return  the  fol-
+          lowing attributes, even though they are an attribute of the returned
+          object:
+
+          +o PermissionsBoundary
+
+          +o Tags
+
+          To view all of the information for a user, see [4mGetUser[24m .
+
+       You can paginate the results using the [1mMaxItems [22mand [1mMarker [22mparameters.
+
+       See also: AWS API Documentation
+
+       [1mlist-users  [22mis  a paginated operation. Multiple API calls may be issued
+       in order to retrieve the entire data set of results.  You  can  disable
+       pagination  by providing the [1m--no-paginate [22margument.  When using [1m--out-[0m
+       [1mput text [22mand the [1m--query [22margument on a paginated response, the  [1m--query[0m
+       argument  must extract data from the results of the following query ex-
+       pressions: [1mUsers[0m
+
+[1mSYNOPSIS[0m
+            list-users
+          [--path-prefix <value>]
+          [--max-items <value>]
+          [--cli-input-json | --cli-input-yaml]
+          [--starting-token <value>]
+          [--page-size <value>]
+          [--generate-cli-skeleton <value>]
+          [--debug]
+          [--endpoint-url <value>]
+          [--no-verify-ssl]
+          [--no-paginate]
+          [--output <value>]
+          [--query <value>]
+          [--profile <value>]
+          [--region <value>]
+          [--version <value>]
+          [--color <value>]
+          [--no-sign-request]
+          [--ca-bundle <value>]
+          [--cli-read-timeout <value>]
+          [--cli-connect-timeout <value>]
+          [--cli-binary-format <value>]
+          [--no-cli-pager]
+          [--cli-auto-prompt]
+          [--no-cli-auto-prompt]
+          [--cli-error-format <value>]
+
+[1mOPTIONS[0m
+       [1m--path-prefix [22m(string)
+          The path prefix for  filtering  the  results.  For  example:  [1m/divi-[0m
+          [1msion_abc/subdivision_xyz/  [22m,  which  would  get all user names whose
+          path starts with [1m/division_abc/subdivision_xyz/ [22m.
+
+          This parameter is optional. If it is not included, it defaults to  a
+          slash  (/),  listing  all user names. This parameter allows (through
+          its [4mregex[24m [4mpattern[24m ) a string of characters consisting  of  either  a
+          forward slash (/) by itself or a string that must begin and end with
+          forward  slashes.  In  addition,  it can contain any ASCII character
+          from the ! ([1m\u0021 [22m) through the DEL character ([1m\u007F [22m),  including
+          most  punctuation  characters, digits, and upper and lowercased let-
+          ters.
+
+          Constraints:
+
+          +o min: [1m1[0m
+
+          +o max: [1m512[0m
+
+          +o pattern: [1m\u002F[\u0021-\u007F]*[0m
+
+       [1m--max-items [22m(integer)
+          The total number of items to return in the command's output. If  the
+          total  number of items available is more than the value specified, a
+          [1mNextToken [22mis provided in the command's output. To resume pagination,
+          provide the [1mNextToken [22mvalue in the [1mstarting-token [22margument of a sub-
+          sequent command. [1mDo not [22muse the [1mNextToken [22mresponse element  directly
+          outside of the AWS CLI.
+
+          For usage examples, see [4mPagination[24m in the [4mAWS[24m [4mCommand[24m [4mLine[24m [4mInterface[0m
+          [4mUser[24m [4mGuide[24m .
+
+       [1m--cli-input-json  [22m|  [1m--cli-input-yaml [22m(string) Reads arguments from the
+       JSON string provided. The JSON string follows the  format  provided  by
+       [1m--generate-cli-skeleton[22m. If other arguments are provided on the command
+       line,  those  values  will override the JSON-provided values. It is not
+       possible to pass arbitrary binary values using a JSON-provided value as
+       the string will be taken literally. This may  not  be  specified  along
+       with [1m--cli-input-yaml[22m.
+
+       [1m--starting-token [22m(string)
+          A  token to specify where to start paginating. This is the [1mNextToken[0m
+          from a previously truncated response.
+
+          For usage examples, see [4mPagination[24m in the [4mAWS[24m [4mCommand[24m [4mLine[24m [4mInterface[0m
+          [4mUser[24m [4mGuide[24m .
+
+       [1m--page-size [22m(integer)
+          The size of each page to get in the AWS service call. This does  not
+          affect the number of items returned in the command's output. Setting
+          a  smaller  page  size results in more calls to the AWS service, re-
+          trieving fewer items in each call. This can  help  prevent  the  AWS
+          service calls from timing out.
+
+          For usage examples, see [4mPagination[24m in the [4mAWS[24m [4mCommand[24m [4mLine[24m [4mInterface[0m
+          [4mUser[24m [4mGuide[24m .
+
+       [1m--generate-cli-skeleton  [22m(string)  Prints  a  JSON skeleton to standard
+       output without sending an API request. If provided with no value or the
+       value [1minput[22m, prints a sample input JSON that can be used as an argument
+       for [1m--cli-input-json[22m. Similarly, if provided [1myaml-input [22mit will print a
+       sample input YAML that can be used with [1m--cli-input-yaml[22m.  If  provided
+       with  the  value  [1moutput[22m, it validates the command inputs and returns a
+       sample output JSON for that command. The generated JSON skeleton is not
+       stable between versions of the AWS CLI and there are no backwards  com-
+       patibility guarantees in the JSON skeleton generated.
+
+[1mGLOBAL OPTIONS[0m
+       [1m--debug [22m(boolean)
+
+       Turn on debug logging.
+
+       [1m--endpoint-url [22m(string)
+
+       Override command's default URL with the given URL.
+
+       [1m--no-verify-ssl [22m(boolean)
+
+       By  default, the AWS CLI uses SSL when communicating with AWS services.
+       For each SSL connection, the AWS CLI will verify SSL certificates. This
+       option overrides the default behavior of verifying SSL certificates.
+
+       [1m--no-paginate [22m(boolean)
+
+       Disable automatic pagination. If automatic pagination is disabled,  the
+       AWS CLI will only make one call, for the first page of results.
+
+       [1m--output [22m(string)
+
+       The formatting style for command output.
+
+       +o json
+
+       +o text
+
+       +o table
+
+       +o yaml
+
+       +o yaml-stream
+
+       +o off
+
+       [1m--query [22m(string)
+
+       A JMESPath query to use in filtering the response data.
+
+       [1m--profile [22m(string)
+
+       Use a specific profile from your credential file.
+
+       [1m--region [22m(string)
+
+       The region to use. Overrides config/env settings.
+
+       [1m--version [22m(string)
+
+       Display the version of this tool.
+
+       [1m--color [22m(string)
+
+       Turn on/off color output.
+
+       +o on
+
+       +o off
+
+       +o auto
+
+       [1m--no-sign-request [22m(boolean)
+
+       Do  not  sign requests. Credentials will not be loaded if this argument
+       is provided.
+
+       [1m--ca-bundle [22m(string)
+
+       The CA certificate bundle to use when verifying SSL certificates. Over-
+       rides config/env settings.
+
+       [1m--cli-read-timeout [22m(int)
+
+       The maximum socket read time in seconds. If the value is set to 0,  the
+       socket  read  will be blocking and not timeout. The default value is 60
+       seconds.
+
+       [1m--cli-connect-timeout [22m(int)
+
+       The maximum socket connect time in seconds. If the value is set  to  0,
+       the  socket connect will be blocking and not timeout. The default value
+       is 60 seconds.
+
+       [1m--cli-binary-format [22m(string)
+
+       The formatting style to be used for binary blobs. The default format is
+       base64. The base64 format expects binary blobs  to  be  provided  as  a
+       base64  encoded string. The raw-in-base64-out format preserves compati-
+       bility with AWS CLI V1 behavior and binary values must be passed liter-
+       ally. When providing contents from a file that map  to  a  binary  blob
+       [1mfileb:// [22mwill always be treated as binary and use the file contents di-
+       rectly  regardless of the [1mcli-binary-format [22msetting. When using [1mfile://[0m
+       the file contents will need to properly formatted  for  the  configured
+       [1mcli-binary-format[22m.
+
+       +o base64
+
+       +o raw-in-base64-out
+
+       [1m--no-cli-pager [22m(boolean)
+
+       Disable cli pager for output.
+
+       [1m--cli-auto-prompt [22m(boolean)
+
+       Automatically prompt for CLI input parameters.
+
+       [1m--no-cli-auto-prompt [22m(boolean)
+
+       Disable automatically prompt for CLI input parameters.
+
+       [1m--cli-error-format [22m(string)
+
+       The formatting style for error output. By default, errors are displayed
+       in enhanced format.
+
+       +o legacy
+
+       +o json
+
+       +o yaml
+
+       +o text
+
+       +o table
+
+       +o enhanced
+
+[1mEXAMPLES[0m
+       [1mNOTE:[0m
+          To  use  the following examples, you must have the AWS CLI installed
+          and configured. See the [4mGetting[24m [4mstarted[24m [4mguide[24m in the  [4mAWS[24m  [4mCLI[24m  [4mUser[0m
+          [4mGuide[24m for more information.
+
+          Unless  otherwise  stated,  all  examples  have  unix-like quotation
+          rules. These examples will need to be  adapted  to  your  terminal's
+          quoting rules. See [4mUsing[24m [4mquotation[24m [4mmarks[24m [4mwith[24m [4mstrings[24m in the [4mAWS[24m [4mCLI[0m
+          [4mUser[24m [4mGuide[24m .
+
+       [1mTo list IAM users[0m
+
+       The following [1mlist-users [22mcommand lists the IAM users in the current ac-
+       count.
+
+          aws iam list-users
+
+       Output:
+
+          {
+              "Users": [
+                  {
+                      "UserName": "Adele",
+                      "Path": "/",
+                      "CreateDate": "2013-03-07T05:14:48Z",
+                      "UserId": "AKIAI44QH8DHBEXAMPLE",
+                      "Arn": "arn:aws:iam::123456789012:user/Adele"
+                  },
+                  {
+                      "UserName": "Bob",
+                      "Path": "/",
+                      "CreateDate": "2012-09-21T23:03:13Z",
+                      "UserId": "AKIAIOSFODNN7EXAMPLE",
+                      "Arn": "arn:aws:iam::123456789012:user/Bob"
+                  }
+              ]
+          }
+
+       For more information, see [4mListing[24m [4mIAM[24m [4musers[24m in the [4mAWS[24m [4mIAM[24m [4mUser[24m [4mGuide[24m.
+
+[1mOUTPUT[0m
+       Users -> (list)
+          A list of users.
+
+          (structure)
+              Contains information about an IAM user entity.
+
+              This  data  type  is used as a response element in the following
+              operations:
+
+              +o [4mCreateUser[0m
+
+              +o [4mGetUser[0m
+
+              +o [4mListUsers[0m
+
+              Path -> (string) [required]
+                 The path to the user. For more information about  paths,  see
+                 [4mIAM[24m [4midentifiers[24m in the [4mIAM[24m [4mUser[24m [4mGuide[24m .
+
+                 The  ARN  of  the policy used to set the permissions boundary
+                 for the user.
+
+                 Constraints:
+
+                 +o min: [1m1[0m
+
+                 +o max: [1m512[0m
+
+                 +o pattern: [1m(\u002F)|(\u002F[\u0021-\u007E]+\u002F)[0m
+
+              UserName -> (string) [required]
+                 The friendly name identifying the user.
+
+                 Constraints:
+
+                 +o min: [1m1[0m
+
+                 +o max: [1m64[0m
+
+                 +o pattern: [1m[\w+=,.@-]+[0m
+
+              UserId -> (string) [required]
+                 The stable and unique string identifying the user.  For  more
+                 information  about  IDs,  see [4mIAM[24m [4midentifiers[24m in the [4mIAM[24m [4mUser[0m
+                 [4mGuide[24m .
+
+                 Constraints:
+
+                 +o min: [1m16[0m
+
+                 +o max: [1m128[0m
+
+                 +o pattern: [1m[\w]+[0m
+
+              Arn -> (string) [required]
+                 The Amazon Resource Name (ARN) that identifies the user.  For
+                 more  information about ARNs and how to use ARNs in policies,
+                 see [4mIAM[24m [4mIdentifiers[24m in the [4mIAM[24m [4mUser[24m [4mGuide[24m .
+
+                 Constraints:
+
+                 +o min: [1m20[0m
+
+                 +o max: [1m2048[0m
+
+              CreateDate -> (timestamp) [required]
+                 The date and time, in [4mISO[24m [4m8601[24m [4mdate-time[24m [4mformat[24m  ,  when  the
+                 user was created.
+
+              PasswordLastUsed -> (timestamp)
+                 The  date  and  time, in [4mISO[24m [4m8601[24m [4mdate-time[24m [4mformat[24m , when the
+                 user's password was last used to sign in  to  an  Amazon  Web
+                 Services  website. For a list of Amazon Web Services websites
+                 that capture a user's last sign-in time, see  the  [4mCredential[0m
+                 [4mreports[24m  topic  in the [4mIAM[24m [4mUser[24m [4mGuide[24m . If a password is used
+                 more than once in a five-minute span, only the first  use  is
+                 returned in this field. If the field is null (no value), then
+                 it  indicates that they never signed in with a password. This
+                 can be because:
+
+                 +o The user never had a password.
+
+                 +o A password exists but has not been used since  IAM  started
+                   tracking this information on October 20, 2014.
+
+                 A  null  value  does not mean that the user [4mnever[24m had a pass-
+                 word. Also, if the user does not currently  have  a  password
+                 but  had  one  in the past, then this field contains the date
+                 and time the most recent password was used.
+
+                 This value is returned only in the [4mGetUser[24m and [4mListUsers[24m  op-
+                 erations.
+
+              PermissionsBoundary -> (structure)
+                 For   more  information  about  permissions  boundaries,  see
+                 [4mPermissions[24m [4mboundaries[24m [4mfor[24m [4mIAM[24m [4midentities[24m  in  the  [4mIAM[24m  [4mUser[0m
+                 [4mGuide[24m .
+
+                 PermissionsBoundaryType -> (string)
+                     The  permissions  boundary usage type that indicates what
+                     type of IAM resource is used as the permissions  boundary
+                     for  an  entity.  This data type can only have a value of
+                     [1mPolicy [22m.
+
+                     Possible values:
+
+                     +o [1mPermissionsBoundaryPolicy[0m
+
+                 PermissionsBoundaryArn -> (string)
+                     The ARN of the policy used to set the permissions  bound-
+                     ary for the user or role.
+
+                     Constraints:
+
+                     +o min: [1m20[0m
+
+                     +o max: [1m2048[0m
+
+              Tags -> (list)
+                 A  list  of  tags that are associated with the user. For more
+                 information about tagging, see [4mTagging[24m [4mIAM[24m [4mresources[24m  in  the
+                 [4mIAM[24m [4mUser[24m [4mGuide[24m .
+
+                 Constraints:
+
+                 +o max: [1m50[0m
+
+                 (structure)
+                     A  structure  that represents user-provided metadata that
+                     can be associated with an IAM resource. For more informa-
+                     tion about tagging, see [4mTagging[24m [4mIAM[24m [4mresources[24m in the  [4mIAM[0m
+                     [4mUser[24m [4mGuide[24m .
+
+                     Key -> (string) [required]
+                        The  key  name that can be used to look up or retrieve
+                        the associated value. For example, [1mDepartment [22mor  [1mCost[0m
+                        [1mCenter [22mare common choices.
+
+                        Constraints:
+
+                        +o min: [1m1[0m
+
+                        +o max: [1m128[0m
+
+                        +o pattern: [1m[\p{L}\p{Z}\p{N}_.:/=+\-@]+[0m
+
+                     Value -> (string) [required]
+                        The  value associated with this tag. For example, tags
+                        with a key name of [1mDepartment [22mcould have  values  such
+                        as  [1mHuman  Resources [22m, [1mAccounting [22m, and [1mSupport [22m. Tags
+                        with a key name of [1mCost Center [22mmight have values  that
+                        consist  of  the  number associated with the different
+                        cost centers in  your  company.  Typically,  many  re-
+                        sources have tags with the same key name but with dif-
+                        ferent values.
+
+                        Constraints:
+
+                        +o min: [1m0[0m
+
+                        +o max: [1m256[0m
+
+                        +o pattern: [1m[\p{L}\p{Z}\p{N}_.:/=+\-@]*[0m
+
+       IsTruncated -> (boolean)
+          A  flag  that  indicates  whether there are more items to return. If
+          your results were truncated, you can make  a  subsequent  pagination
+          request  using  the [1mMarker [22mrequest parameter to retrieve more items.
+          Note that IAM might return fewer than the [1mMaxItems [22mnumber of results
+          even when there are more results available. We  recommend  that  you
+          check  [1mIsTruncated  [22mafter  every call to ensure that you receive all
+          your results.
+
+       Marker -> (string)
+          When [1mIsTruncated [22mis [1mtrue [22m, this element is present and contains  the
+          value to use for the [1mMarker [22mparameter in a subsequent pagination re-
+          quest.
+
+                                                                  [4mLIST-USERS[24m()

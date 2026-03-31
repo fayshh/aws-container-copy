@@ -16,7 +16,7 @@ resource "aws_instance" "app_server" {
 
 import {
   to = aws_instance.app_server
-  id = "i-029e6ad9823c39640"
+  id = "i-02a48ba7c3ddcf5a1"
 }
 output "public_ip" {
   value = aws_instance.app_server.public_ip
